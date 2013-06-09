@@ -8,5 +8,5 @@
 /staging        emmc            /dev/block/platform/sdhci-tegra.3/by-name/USP
 /metadata       emmc            /dev/block/platform/sdhci-tegra.3/by-name/MDA
 /data           ext4            /dev/block/platform/sdhci-tegra.3/by-name/UDA
-/sdcard         vfat            /dev/block/platform/sdhci-tegra.0/by-num/p1
+/sdcard         datamedia       /dev/null
 
