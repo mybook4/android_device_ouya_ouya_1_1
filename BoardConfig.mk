@@ -3,16 +3,28 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/ouya/ouya_1_1/BoardConfigVendor.mk
 
-TARGET_ARCH := arm
+# Board naming
+TARGET_NO_RADIOIMAGE := true
+TARGET_BOARD_PLATFORM := tegra
+TARGET_BOOTLOADER_BOARD_NAME := ouya
+
+BOARD_EGL_CFG := device/ouya/ouya_1_1/configs/egl.cfg
+
+# Target arch settings
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := unknown
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a9
+TARGET_CPU_SMP := true
+TARGET_ARCH := arm
 ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
+ARCH_ARM_USE_NON_NEON_MEMCPY := true
 
-TARGET_BOOTLOADER_BOARD_NAME := ouya_1_1
+NEED_WORKAROUND_CORTEX_A9_745320 := true
 
+# Boot/Recovery image settings
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
